@@ -3360,7 +3360,13 @@ GET TEXT
 
 window.t = function(key){
 
-    return t(key);
+    if(typeof getTranslation==="function"){
+
+        return getTranslation(key);
+
+    }
+
+    return key;
 
 };
 
