@@ -626,175 +626,217 @@ addToFavorites(product);
 
 });
 
-function loadOrderSummary() {
+/*==========================
+ORDER MODAL
+==========================*/
 
-    const cart =
-    JSON.parse(localStorage.getItem("cart")) || [];
-
-
-        let total = 0;
-
-    let html = "<h3>ملخص الطلب</h3>";
-
-    cart.forEach(item => {
-
-        total += Number(item.price);
-
-        html += `
-        <p>
-            ${item.name}
-            - ${item.price} درهم
-        </p>
-        `;
-    });
-
-    html += `
-    <hr>
-    <strong>
-        المجموع: ${total} درهم
-    </strong>
-    `;
-
-    document.getElementById("orderSummary").innerHTML = html;
-}
 function openOrderModal(){
 
-    alert("تم الضغط على الزر");
-
-    document.getElementById("orderModal").style.display = "flex";
-
-}
     loadOrderSummary();
 
-    document.getElementById("orderModal").style.display = "flex";
+    document
+    .getElementById("orderModal")
+    .classList.add("show");
+
+    document.body.style.overflow="hidden";
+
+}
 
 function closeOrderModal(){
-    document.getElementById("orderModal").style.display = "none";
+
+    document
+    .getElementById("orderModal")
+    .classList.remove("show");
+
+    document.body.style.overflow="auto";
+
 }
 
-    
+/* إغلاق عند الضغط خارج النافذة */
 
+document.addEventListener("click",function(e){
+
+const modal=
+document.getElementById("orderModal");
+
+if(
+e.target===modal
+){
+
+closeOrderModal();
+
+}
+
+});
+
+/*==========================
+LOAD ORDER SUMMARY
+==========================*/
 
 function loadOrderSummary(){
-const whatsappNumber = "212721205426";
 
-    const url =
-    `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+const cart=
+JSON.parse(
+localStorage.getItem("cart")
+)||[];
 
-    window.open(url,"_blank");
+let total=0;
 
-    const cart =
-    JSON.parse(localStorage.getItem("cart")) || [];
+let html="<h3>ملخص الطلب</h3>";
 
-    let total = 0;
+cart.forEach(item=>{
 
-    let html = "<h3>ملخص الطلب</h3>";
+const subtotal=
+item.price*
+item.quantity;
 
-    cart.forEach(item => {
+total+=subtotal;
 
-        total += Number(item.price);
+html+=`
 
-        html += `
-            <p>
-                ${item.name}
-                - ${item.price} درهم
-            </p>
-        `;
+<p>
 
-    });
+${item.name}
 
-    html += `
-        <hr>
-        <strong>
-            المجموع : ${total} درهم
-        </strong>
-    `;
+×
 
-    document.getElementById("orderSummary").innerHTML = html;
+${item.quantity}
+
+<span style="float:left">
+
+${subtotal} درهم
+
+</span>
+
+</p>
+
+`;
+
+});
+
+html+=`
+
+<hr>
+
+<strong>
+
+المجموع :
+
+${total}
+
+درهم
+
+</strong>
+
+`;
+
+document
+.getElementById("orderSummary")
+.innerHTML=html;
 
 }
+
+/*==========================
+SEND WHATSAPP
+==========================*/
+
 function sendOrderWhatsApp(){
 
-    const firstName =
-    document.getElementById("firstName").value;
+const firstName=
+document.getElementById("firstName").value.trim();
 
-    const phone =
-    document.getElementById("phone").value;
+const phone=
+document.getElementById("phone").value.trim();
 
-    const city =
-    document.getElementById("city").value;
+const city=
+document.getElementById("city").value.trim();
 
+const address=
+document.getElementById("address").value.trim();
 
+if(
+!firstName||
+!phone||
+!city||
+!address
+){
 
-    const address =
-    document.getElementById("address").value;
+alert("يرجى ملء جميع المعلومات.");
 
-    if(
-        firstName === "" ||
-        phone === "" ||
-        city === "" ||
-        address === ""
-    ){
-        alert("يرجى ملء جميع المعلومات");
-        return;
-    }
+return;
 
-    const cart =
-    JSON.parse(localStorage.getItem("cart")) || [];
+}
 
-    let total = 0;
+const cart=
+JSON.parse(
+localStorage.getItem("cart")
+)||[];
 
-    let productsText = "";
+let total=0;
 
+let products="";
 
+cart.forEach(item=>{
 
-    cart.forEach(item => {
+const subtotal=
+item.price*
+item.quantity;
 
+total+=subtotal;
 
- 
-        total += Number(item.price);
+products+=
 
-        productsText +=
-        item.name +
-        " - " +
-        item.price +
-        " درهم\n";
+`• ${item.name}
 
-    });
+الكمية : ${item.quantity}
 
-    const message =
+السعر : ${subtotal} درهم
+
+`;
+
+});
+
+const message=
 
 `🛒 طلب جديد
 
-👤 الاسم:
+👤 الاسم :
+
 ${firstName}
 
-📞 الهاتف:
+📞 الهاتف :
+
 ${phone}
 
-🏙️ المدينة:
+🏙️ المدينة :
+
 ${city}
 
-📍 العنوان:
+📍 العنوان :
+
 ${address}
 
-------------------
+--------------------
 
-📦 المنتجات:
+📦 المنتجات
 
-${productsText}
+${products}
 
-------------------
+--------------------
 
-💰 المجموع:
+💰 المجموع :
+
 ${total} درهم`;
 
-    const whatsappNumber =
-    "212721205426";
+const whatsappNumber=
+"212721205426";
 
-    const url =
-    `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+window.open(
 
-    window.open(url,"_blank");
+`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
+
+"_blank"
+
+);
 
 }
