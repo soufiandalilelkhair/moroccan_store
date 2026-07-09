@@ -2087,3 +2087,1093 @@ text-align:center;
 justify-content:center;
 }
 }
+/*==================================================
+LANG.JS + MAIN.JS SUPPORT
+PART 1
+==================================================*/
+
+/*==============================
+RTL / LTR SUPPORT
+==============================*/
+
+html{
+direction:rtl;
+}
+
+html[dir="rtl"]{
+direction:rtl;
+}
+
+html[dir="ltr"]{
+direction:ltr;
+}
+
+body{
+
+transition:
+background .35s ease,
+color .35s ease,
+font-family .35s ease;
+
+}
+
+/*==============================
+FONTS
+==============================*/
+
+html[lang="ar"] body{
+
+font-family:
+"Cairo",
+sans-serif;
+
+}
+
+html[lang="en"] body,
+html[lang="fr"] body,
+html[lang="es"] body,
+html[lang="de"] body{
+
+font-family:
+"Poppins",
+sans-serif;
+
+}
+
+/*==============================
+RTL FIXES
+==============================*/
+
+html[dir="rtl"] .navbar{
+
+direction:rtl;
+
+}
+
+html[dir="ltr"] .navbar{
+
+direction:ltr;
+
+}
+
+html[dir="rtl"] .nav-links{
+
+flex-direction:row;
+
+}
+
+html[dir="ltr"] .nav-links{
+
+flex-direction:row;
+
+}
+
+html[dir="rtl"] .top-bar .container{
+
+direction:rtl;
+
+}
+
+html[dir="ltr"] .top-bar .container{
+
+direction:ltr;
+
+}
+
+/*==============================
+TEXT ALIGN
+==============================*/
+
+html[dir="rtl"]{
+
+text-align:right;
+
+}
+
+html[dir="ltr"]{
+
+text-align:left;
+
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6,
+html[dir="rtl"] p{
+
+text-align:right;
+
+}
+
+html[dir="ltr"] h1,
+html[dir="ltr"] h2,
+html[dir="ltr"] h3,
+html[dir="ltr"] h4,
+html[dir="ltr"] h5,
+html[dir="ltr"] h6,
+html[dir="ltr"] p{
+
+text-align:left;
+
+}
+
+/*==============================
+INPUTS
+==============================*/
+
+input,
+textarea,
+select{
+
+transition:.3s;
+
+}
+
+html[dir="rtl"] input,
+html[dir="rtl"] textarea,
+html[dir="rtl"] select{
+
+text-align:right;
+
+}
+
+html[dir="ltr"] input,
+html[dir="ltr"] textarea,
+html[dir="ltr"] select{
+
+text-align:left;
+
+}
+
+/*==============================
+BUTTONS
+==============================*/
+
+button{
+
+transition:
+background .3s,
+color .3s,
+transform .3s;
+
+}
+
+button:hover{
+
+transform:
+translateY(-2px);
+
+}
+
+/*==============================
+LANGUAGE BUTTON
+==============================*/
+
+#languageBtn{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+#languageBtn:hover{
+
+transform:rotate(180deg);
+
+background:#c89b3c;
+
+color:#111;
+
+}
+
+/*==============================
+TRANSLATABLE ELEMENTS
+==============================*/
+
+[data-i18n],
+[data-i18n-placeholder],
+[data-i18n-title],
+[data-i18n-alt],
+[data-i18n-value]{
+
+transition:
+opacity .25s ease,
+transform .25s ease;
+
+}
+
+/*==============================
+SMOOTH LANGUAGE CHANGE
+==============================*/
+
+.language-changing{
+
+opacity:.6;
+
+transform:scale(.98);
+
+pointer-events:none;
+
+}
+
+/*==============================
+END PART 1
+==============================*/
+/*==================================================
+LANG.JS + MAIN.JS SUPPORT
+PART 2
+ORDER MODAL + CART + WISHLIST
+==================================================*/
+
+/*==============================
+ORDER MODAL
+==============================*/
+
+.order-modal{
+
+opacity:0;
+
+visibility:hidden;
+
+pointer-events:none;
+
+transition:
+opacity .35s ease,
+visibility .35s ease;
+
+}
+
+.order-modal.show{
+
+opacity:1;
+
+visibility:visible;
+
+pointer-events:auto;
+
+}
+
+.order-box{
+
+animation:
+modalOpen .35s ease;
+
+}
+
+@keyframes modalOpen{
+
+from{
+
+opacity:0;
+
+transform:
+translateY(30px)
+scale(.95);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0)
+scale(1);
+
+}
+
+}
+
+/*==============================
+ORDER FORM
+==============================*/
+
+.order-box input,
+.order-box textarea{
+
+background:#fff;
+
+color:#222;
+
+transition:.3s;
+
+}
+
+body.dark
+.order-box{
+
+background:#132933;
+
+color:white;
+
+}
+
+body.dark
+.order-box input,
+
+body.dark
+.order-box textarea{
+
+background:#10232c;
+
+color:white;
+
+border-color:#28424f;
+
+}
+
+body.dark
+.order-box input::placeholder,
+
+body.dark
+.order-box textarea::placeholder{
+
+color:#c8c8c8;
+
+}
+
+/*==============================
+ORDER SUMMARY
+==============================*/
+
+#orderSummary{
+
+line-height:2;
+
+font-size:15px;
+
+}
+
+#orderSummary strong{
+
+color:#c89b3c;
+
+font-size:18px;
+
+}
+
+/*==============================
+CART
+==============================*/
+
+.cart-item{
+
+transition:
+transform .35s,
+box-shadow .35s;
+
+}
+
+.cart-item:hover{
+
+transform:
+translateY(-5px);
+
+}
+
+.cart-item img{
+
+transition:
+transform .4s ease;
+
+}
+
+.cart-item:hover img{
+
+transform:
+scale(1.05);
+
+}
+
+/*==============================
+QUANTITY BUTTONS
+==============================*/
+
+.cart-qty button{
+
+transition:.3s;
+
+}
+
+.cart-qty button:hover{
+
+background:#0f4c5c;
+
+color:white;
+
+transform:scale(1.08);
+
+}
+
+/*==============================
+REMOVE BUTTON
+==============================*/
+
+.remove-btn{
+
+transition:.3s;
+
+}
+
+.remove-btn:hover{
+
+background:#b81d2d;
+
+transform:
+translateY(-2px);
+
+}
+
+/*==============================
+SUMMARY BOX
+==============================*/
+
+.cart-summary{
+
+transition:.35s;
+
+}
+
+body.dark
+.cart-summary{
+
+background:#132933;
+
+color:white;
+
+}
+
+/*==============================
+WISHLIST
+==============================*/
+
+.wishlist-btn{
+
+transition:
+transform .3s,
+color .3s;
+
+}
+
+.wishlist-btn:hover{
+
+transform:
+scale(1.15);
+
+color:#e63946;
+
+}
+
+.wishlist-btn.active{
+
+color:#e63946;
+
+}
+
+/*==============================
+TOAST
+==============================*/
+
+.custom-toast{
+
+position:fixed;
+
+bottom:30px;
+
+left:50%;
+
+transform:
+translateX(-50%);
+
+background:#0f4c5c;
+
+color:#fff;
+
+padding:14px 24px;
+
+border-radius:50px;
+
+font-weight:700;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.25);
+
+opacity:0;
+
+pointer-events:none;
+
+z-index:999999;
+
+transition:
+opacity .35s,
+transform .35s;
+
+}
+
+.custom-toast.show{
+
+opacity:1;
+
+transform:
+translateX(-50%)
+translateY(-10px);
+
+}
+
+/*==============================
+LANGUAGE ANIMATION
+==============================*/
+
+.language-changing *{
+
+transition:
+all .25s ease;
+
+}
+
+/*==============================
+RTL ORDER FORM
+==============================*/
+
+html[dir="rtl"] .order-box{
+
+text-align:right;
+
+}
+
+html[dir="ltr"] .order-box{
+
+text-align:left;
+
+}
+
+/*==============================
+RTL CART
+==============================*/
+
+html[dir="rtl"] .cart-item{
+
+direction:rtl;
+
+}
+
+html[dir="ltr"] .cart-item{
+
+direction:ltr;
+
+}
+
+/*==============================
+END PART 2
+==============================*/
+/*==================================================
+LANG.JS + MAIN.JS SUPPORT
+PART 3
+LANGUAGE MENU + DARK MODE + RESPONSIVE
+==================================================*/
+
+/*==============================
+LANGUAGE DROPDOWN
+==============================*/
+
+.language-menu{
+
+position:absolute;
+
+top:60px;
+
+right:0;
+
+min-width:180px;
+
+background:#fff;
+
+border-radius:16px;
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.15);
+
+overflow:hidden;
+
+opacity:0;
+
+visibility:hidden;
+
+transform:
+translateY(10px);
+
+transition:.3s;
+
+z-index:99999;
+
+}
+
+.language-menu.show{
+
+opacity:1;
+
+visibility:visible;
+
+transform:
+translateY(0);
+
+}
+
+.language-menu button{
+
+width:100%;
+
+padding:14px 18px;
+
+border:none;
+
+background:transparent;
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+font-size:15px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.language-menu button:hover{
+
+background:#c89b3c;
+
+color:#111;
+
+}
+
+body.dark .language-menu{
+
+background:#132933;
+
+color:#fff;
+
+}
+
+body.dark .language-menu button{
+
+color:#fff;
+
+}
+
+/*==============================
+DARK MODE TRANSITIONS
+==============================*/
+
+body,
+section,
+header,
+footer,
+.product-card,
+.feature-card,
+.category-card,
+.order-box,
+.cart-summary{
+
+transition:
+
+background-color .35s ease,
+
+color .35s ease,
+
+border-color .35s ease,
+
+box-shadow .35s ease;
+
+}
+
+/*==============================
+RTL FLEX FIXES
+==============================*/
+
+html[dir="rtl"] .hero-buttons{
+
+flex-direction:row;
+
+}
+
+html[dir="ltr"] .hero-buttons{
+
+flex-direction:row;
+
+}
+
+html[dir="rtl"] .actions{
+
+flex-direction:row-reverse;
+
+}
+
+html[dir="ltr"] .actions{
+
+flex-direction:row;
+
+}
+
+/*==============================
+ICONS
+==============================*/
+
+html[dir="rtl"] i{
+
+margin-left:8px;
+
+margin-right:0;
+
+}
+
+html[dir="ltr"] i{
+
+margin-right:8px;
+
+margin-left:0;
+
+}
+
+/*==============================
+PRODUCT INFO
+==============================*/
+
+.product-info{
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+}
+
+.product-info .price{
+
+align-self:flex-start;
+
+}
+
+html[dir="rtl"] .product-info .price{
+
+align-self:flex-end;
+
+}
+
+/*==============================
+RESPONSIVE
+==============================*/
+
+@media(max-width:768px){
+
+.language-menu{
+
+right:10px;
+
+left:10px;
+
+min-width:auto;
+
+}
+
+.order-box{
+
+padding:25px;
+
+}
+
+.cart-summary{
+
+padding:20px;
+
+}
+
+.product-info{
+
+text-align:center;
+
+}
+
+}
+
+/*==============================
+ACCESSIBILITY
+==============================*/
+
+button:focus,
+input:focus,
+textarea:focus,
+select:focus{
+
+outline:2px solid #c89b3c;
+
+outline-offset:2px;
+
+}
+
+/*==============================
+SMOOTH LANGUAGE SWITCH
+==============================*/
+
+html.language-changing{
+
+cursor:progress;
+
+}
+
+html.language-changing body{
+
+opacity:.96;
+
+}
+
+/*==============================
+END PART 3
+==============================*/
+/*==================================================
+LANG.JS + MAIN.JS SUPPORT
+PART 4
+ADVANCED RTL/LTR + COMPONENTS
+==================================================*/
+
+/*==============================
+DIRECTION HELPERS
+==============================*/
+
+html[dir="rtl"] .container,
+html[dir="rtl"] section,
+html[dir="rtl"] footer{
+
+direction:rtl;
+
+}
+
+html[dir="ltr"] .container,
+html[dir="ltr"] section,
+html[dir="ltr"] footer{
+
+direction:ltr;
+
+}
+
+/*==============================
+GRID FIXES
+==============================*/
+
+.products-grid,
+.categories-grid,
+.features .container,
+.footer-grid{
+
+transition:.35s ease;
+
+}
+
+/*==============================
+PRODUCT CARD
+==============================*/
+
+.product-card{
+
+display:flex;
+
+flex-direction:column;
+
+height:100%;
+
+}
+
+.product-image{
+
+overflow:hidden;
+
+}
+
+.product-info{
+
+flex:1;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:space-between;
+
+}
+
+/*==============================
+BUTTONS
+==============================*/
+
+.btn,
+button,
+.icon-btn{
+
+user-select:none;
+
+-webkit-user-select:none;
+
+}
+
+.btn:active,
+button:active{
+
+transform:scale(.97);
+
+}
+
+/*==============================
+INPUTS
+==============================*/
+
+input,
+textarea,
+select{
+
+font-size:15px;
+
+}
+
+input::placeholder,
+textarea::placeholder{
+
+opacity:.7;
+
+}
+
+/*==============================
+LANG.JS ATTRIBUTES
+==============================*/
+
+[data-i18n]{
+
+display:inline-block;
+
+}
+
+[data-i18n-placeholder]{
+
+transition:.25s;
+
+}
+
+[data-i18n-title]{
+
+cursor:help;
+
+}
+
+[data-i18n-alt]{
+
+pointer-events:auto;
+
+}
+
+/*==============================
+IMAGES
+==============================*/
+
+img{
+
+user-select:none;
+
+-webkit-user-drag:none;
+
+}
+
+/*==============================
+LOADING STATE
+==============================*/
+
+.loading{
+
+pointer-events:none;
+
+opacity:.65;
+
+filter:blur(.5px);
+
+}
+
+/*==============================
+EMPTY STATES
+==============================*/
+
+.empty-state{
+
+padding:40px;
+
+text-align:center;
+
+opacity:.8;
+
+}
+
+.empty-state i{
+
+font-size:60px;
+
+margin-bottom:15px;
+
+color:#c89b3c;
+
+}
+
+/*==============================
+SCROLL FIX
+==============================*/
+
+html{
+
+scroll-padding-top:100px;
+
+}
+
+/*==============================
+CUSTOM SELECTION
+==============================*/
+
+::selection{
+
+background:#c89b3c;
+
+color:#111;
+
+}
+
+/*==============================
+SMOOTH TRANSITIONS
+==============================*/
+
+*{
+
+transition:
+
+background-color .25s ease,
+
+color .25s ease,
+
+border-color .25s ease;
+
+}
+
+/*==============================
+END PART 4
+==============================*/

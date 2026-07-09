@@ -392,8 +392,7 @@ LANGUAGES
 ========================================= */
 
 let currentLanguage =
-localStorage.getItem("lang") || "ar";
-
+getLanguage();
 const translations = {
 
 ar:{
@@ -424,19 +423,9 @@ contact:"Contacto"
 
 function setLanguage(lang){
 
-currentLanguage = lang;
+changeLanguage(lang);
 
-localStorage.setItem(
-"lang",
-lang
-);
-
-document
-.documentElement
-.setAttribute(
-"lang",
-lang
-);
+currentLanguage = getLanguage();
 
 }
 
@@ -449,8 +438,7 @@ languageBtn?.addEventListener(
 "click",
 ()=>{
 
-const langs =
-["ar","fr","en","es"];
+const langs = ["ar","en","fr","es","de"];
 
 let index =
 langs.indexOf(
@@ -465,13 +453,13 @@ index = 0;
 
 }
 
-setLanguage(
-langs[index]
-);
+changeLanguage(langs[index]);
+
+refreshTranslations();
 
 showToast(
-"Language: " +
-langs[index].toUpperCase()
+t("messages.languageChanged") ||
+("Language: " + langs[index].toUpperCase())
 );
 
 }
