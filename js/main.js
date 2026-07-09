@@ -634,21 +634,25 @@ function openOrderModal(){
 
     loadOrderSummary();
 
-    document
-    .getElementById("orderModal")
-    .classList.add("show");
+    const modal = document.getElementById("orderModal");
 
-    document.body.style.overflow="hidden";
+    modal.style.display = "flex";
+
+    modal.classList.add("show");
+
+    document.body.style.overflow = "hidden";
 
 }
 
 function closeOrderModal(){
 
-    document
-    .getElementById("orderModal")
-    .classList.remove("show");
+    const modal = document.getElementById("orderModal");
 
-    document.body.style.overflow="auto";
+    modal.classList.remove("show");
+
+    modal.style.display = "none";
+
+    document.body.style.overflow = "auto";
 
 }
 
@@ -840,3 +844,16 @@ window.open(
 );
 
 }
+document.addEventListener("DOMContentLoaded", () => {
+
+    const modal = document.getElementById("orderModal");
+
+    if(modal){
+
+        modal.style.display = "none";
+
+        modal.classList.remove("show");
+
+    }
+
+});
