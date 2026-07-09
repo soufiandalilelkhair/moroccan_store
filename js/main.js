@@ -430,41 +430,57 @@ currentLanguage = getLanguage();
 }
 
 const languageBtn =
-document.getElementById(
-"languageBtn"
-);
+document.getElementById("languageBtn");
 
-languageBtn?.addEventListener(
-"click",
-()=>{
+const languageMenu =
+document.getElementById("languageMenu");
 
-const langs = ["ar","en","fr","es","de"];
+languageBtn?.addEventListener("click",(e)=>{
 
-let index =
-langs.indexOf(
-currentLanguage
-);
+e.stopPropagation();
 
-index++;
+toggleLanguageMenu();
 
-if(index >= langs.length){
+});
 
-index = 0;
+document
+.querySelectorAll(
+"#languageMenu [data-language]"
+)
+.forEach(button=>{
 
-}
+button.addEventListener("click",()=>{
 
-changeLanguage(langs[index]);
+const lang =
+button.dataset.language;
+
+changeLanguage(lang);
 
 refreshTranslations();
 
+languageMenu.classList.remove("show");
+
 showToast(
-t("messages.languageChanged") ||
-("Language: " + langs[index].toUpperCase())
+t("messages.languageChanged")
 );
+
+});
+
+});
+
+document.addEventListener("click",(e)=>{
+
+if(
+languageMenu &&
+!languageMenu.contains(e.target) &&
+e.target !== languageBtn
+){
+
+languageMenu.classList.remove("show");
 
 }
-);
 
+});
 /* =========================================
 CART TOTAL
 ========================================= */

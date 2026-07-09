@@ -1,54 +1,1253 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>أصالة الفخار المغربي</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta
+name="description"
+content="أصالة الفخار المغربي">
+
+<title data-i18n="hero.title">
+أصالة الفخار المغربي
+</title>
+
+<!-- Google Fonts -->
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- Style -->
+
+<link
+rel="stylesheet"
+href="style.css">
+
 </head>
+
 <body>
-<div id="preloader"><div class="loader-logo"><h1>أصالة الفخار</h1><span>ASALAT AL FAKHAR</span></div></div>
-<header id="header"><nav class="navbar">
-<div class="logo"><h2 data-i18n="hero.title">أصالة الفخار</h2></div>
+
+<!-- =========================
+PRELOADER
+========================= -->
+
+<div id="preloader">
+
+<div class="loader-logo">
+
+<h1>
+أصالة الفخار
+</h1>
+
+<span>
+ASALAT AL FAKHAR
+</span>
+
+</div>
+
+</div>
+
+<!-- =========================
+TOP BAR
+========================= -->
+
+<div class="top-bar">
+
+<div class="container">
+
+<div class="top-left">
+
+<span data-i18n="hero.badge">
+
+صناعة مغربية أصيلة
+
+</span>
+
+</div>
+
+<div class="top-right">
+
+<a href="#">
+
+<i class="fab fa-facebook-f"></i>
+
+</a>
+
+<a href="#">
+
+<i class="fab fa-instagram"></i>
+
+</a>
+
+<a href="#">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- =========================
+HEADER
+========================= -->
+
+<header id="header">
+
+<nav class="navbar">
+
+<div class="logo">
+
+<h2 data-i18n="hero.title">
+
+أصالة الفخار
+
+</h2>
+
+</div>
+
 <ul class="nav-links">
-<li><a href="#home" data-i18n="navbar.home">الرئيسية</a></li>
-<li><a href="#about" data-i18n="navbar.about">من نحن</a></li>
-<li><a href="#categories" data-i18n="navbar.categories">التصنيفات</a></li>
-<li><a href="#products" data-i18n="navbar.products">المنتجات</a></li>
-<li><a href="#contact" data-i18n="navbar.contact">اتصل بنا</a></li>
+
+<li>
+<a href="#home"
+data-i18n="navbar.home">
+الرئيسية
+</a>
+</li>
+
+<li>
+<a href="#about"
+data-i18n="navbar.about">
+من نحن
+</a>
+</li>
+
+<li>
+<a href="#categories"
+data-i18n="navbar.categories">
+التصنيفات
+</a>
+</li>
+
+<li>
+<a href="#products"
+data-i18n="navbar.products">
+المنتجات
+</a>
+</li>
+
+<li>
+<a href="#contact"
+data-i18n="navbar.contact">
+اتصل بنا
+</a>
+</li>
+
 </ul>
+
 <div class="nav-actions">
-<button id="themeBtn" class="icon-btn"><i class="fas fa-moon"></i></button>
-<button id="languageBtn" class="icon-btn"><i class="fas fa-globe"></i></button>
-<a class="icon-btn"><i class="fas fa-heart"></i><span id="favorites-count">0</span></a>
-<a class="icon-btn"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></a>
-<div id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
-</div></nav></header>
-<div id="mobileMenu"></div>
-<input id="searchInput" placeholder="ابحث عن منتج...">
-<section class="hero" id="home"><div class="hero-overlay"></div><div class="hero-content">
-<h1 data-i18n="hero.title">أصالة الفخار المغربي</h1>
-<p data-i18n="hero.description">اكتشف أجمل منتجات الفخار المغربي.</p>
-</div></section>
-<section id="about" class="about-section"><div class="container"><h2 data-i18n="about.title">من نحن</h2></div></section>
-<section id="categories" class="categories-section"><div class="container"><h2 data-i18n="categories.title">التصنيفات</h2></div></section>
-<section id="products" class="featured-products"><div class="container"><div class="products-grid">
-<div class="product-card"><div class="product-image"><img src="https://picsum.photos/500"></div><div class="product-info">
-<h3>منتج تجريبي</h3><div class="price">150 DH</div>
-<button class="btn btn-primary" onclick="addToCart({id:1,name:'منتج تجريبي',price:150,image:'https://picsum.photos/500'})">إضافة للسلة</button>
-<button class="wishlist-btn" data-id="1" data-name="منتج تجريبي" data-price="150" data-image="https://picsum.photos/500">❤</button>
-</div></div></div></div></section>
-<div id="orderModal" class="order-modal"><div class="order-box">
-<span class="close-modal" onclick="closeOrderModal()">&times;</span>
+
+<button
+id="themeBtn"
+class="icon-btn">
+
+<i class="fas fa-moon"></i>
+
+</button>
+
+<div class="language-wrapper">
+
+<button
+id="languageBtn"
+class="icon-btn">
+
+<i class="fas fa-globe"></i>
+
+</button>
+
+<div
+id="languageMenu"
+class="language-menu">
+
+<button
+data-language="ar">
+
+🇲🇦 العربية
+
+</button>
+
+<button
+data-language="en">
+
+🇬🇧 English
+
+</button>
+
+<button
+data-language="fr">
+
+🇫🇷 Français
+
+</button>
+
+<button
+data-language="es">
+
+🇪🇸 Español
+
+</button>
+
+<button
+data-language="de">
+
+🇩🇪 Deutsch
+
+</button>
+
+</div>
+
+</div>
+
+<button
+class="icon-btn">
+
+<i class="fas fa-heart"></i>
+
+<span id="favorites-count">
+
+0
+
+</span>
+
+</button>
+
+<button
+class="icon-btn">
+
+<i class="fas fa-shopping-cart"></i>
+
+<span id="cart-count">
+
+0
+
+</span>
+
+</button>
+
+<div
+id="mobileMenuBtn">
+
+<i class="fas fa-bars"></i>
+
+</div>
+
+</div>
+
+</nav>
+
+</header>
+
+<!-- =========================
+MOBILE MENU
+========================= -->
+
+<div id="mobileMenu">
+
+<a href="#home"
+data-i18n="navbar.home">
+الرئيسية
+</a>
+
+<a href="#about"
+data-i18n="navbar.about">
+من نحن
+</a>
+
+<a href="#categories"
+data-i18n="navbar.categories">
+التصنيفات
+</a>
+
+<a href="#products"
+data-i18n="navbar.products">
+المنتجات
+</a>
+
+<a href="#contact"
+data-i18n="navbar.contact">
+اتصل بنا
+</a>
+
+</div>
+
+<main id="home">
+    <!-- =========================
+HERO
+========================= -->
+
+<section class="hero">
+
+<div class="hero-overlay"></div>
+
+<div class="container hero-content">
+
+<span
+class="hero-badge"
+data-i18n="hero.badge">
+
+صناعة مغربية أصيلة
+
+</span>
+
+<h1
+data-i18n="hero.title">
+
+أصالة الفخار المغربي
+
+</h1>
+
+<h2
+data-i18n="hero.subtitle">
+
+منتجات يدوية تقليدية بجودة عالية
+
+</h2>
+
+<p
+data-i18n="hero.description">
+
+اكتشف أجمل منتجات الفخار المغربي المصنوعة يدوياً بأيدي حرفيين محترفين.
+
+</p>
+
+<div class="hero-buttons">
+
+<a
+href="#products"
+class="btn btn-primary"
+data-i18n="hero.shopNow">
+
+تسوق الآن
+
+</a>
+
+<a
+href="#about"
+class="btn btn-secondary"
+data-i18n="hero.explore">
+
+استكشف المنتجات
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-scroll">
+
+<i class="fas fa-angle-double-down"></i>
+
+<span>
+
+SCROLL
+
+</span>
+
+</div>
+
+</section>
+
+<!-- =========================
+SEARCH
+========================= -->
+
+<section class="container mt-5">
+
+<input
+
+id="searchInput"
+
+type="search"
+
+placeholder="ابحث عن منتج..."
+
+data-i18n-placeholder="search.placeholder">
+
+</section>
+
+<!-- =========================
+FEATURES
+========================= -->
+
+<section class="features">
+
+<div class="container">
+
+<div class="feature-card fade-up">
+
+<i class="fas fa-award"></i>
+
+<h3
+data-i18n="about.quality">
+
+الجودة
+
+</h3>
+
+<p>
+
+منتجات يدوية بجودة عالية.
+
+</p>
+
+</div>
+
+<div class="feature-card fade-up">
+
+<i class="fas fa-shipping-fast"></i>
+
+<h3>
+
+شحن سريع
+
+</h3>
+
+<p>
+
+توصيل سريع وآمن.
+
+</p>
+
+</div>
+
+<div class="feature-card fade-up">
+
+<i class="fas fa-lock"></i>
+
+<h3>
+
+دفع آمن
+
+</h3>
+
+<p>
+
+جميع معاملاتك محمية.
+
+</p>
+
+</div>
+
+<div class="feature-card fade-up">
+
+<i class="fas fa-headset"></i>
+
+<h3>
+
+دعم دائم
+
+</h3>
+
+<p>
+
+خدمة العملاء طوال الأسبوع.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+ABOUT
+========================= -->
+
+<section
+id="about"
+class="about-section">
+
+<div class="container">
+
+<div class="about-grid">
+
+<div class="about-image slide-right">
+
+<img
+src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80"
+alt="Moroccan Pottery">
+
+</div>
+
+<div class="about-content slide-left">
+
+<span
+class="section-tag"
+data-i18n="about.subtitle">
+
+حرفيون منذ أجيال
+
+</span>
+
+<h2
+data-i18n="about.title">
+
+من نحن
+
+</h2>
+
+<p
+data-i18n="about.description">
+
+نقدم أجود منتجات الفخار المغربي التقليدي المصنوعة يدوياً مع الحفاظ على الأصالة المغربية.
+
+</p>
+
+<div class="hero-buttons mt-3">
+
+<a
+href="#products"
+class="btn btn-primary"
+data-i18n="buttons.shopNow">
+
+تسوق الآن
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+CATEGORIES
+========================= -->
+
+<section
+id="categories"
+class="categories-section">
+
+<div class="container">
+
+<div class="section-header">
+
+<span>
+
+MOROCCAN COLLECTION
+
+</span>
+
+<h2
+data-i18n="categories.title">
+
+التصنيفات
+
+</h2>
+
+</div>
+
+<div class="categories-grid">
+
+<div class="category-card">
+
+<img
+src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=900&q=80"
+alt="">
+
+<div class="category-overlay">
+
+<h3
+data-i18n="categories.tajine">
+
+الطواجن
+
+</h3>
+
+</div>
+
+</div>
+
+<div class="category-card">
+
+<img
+src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=900&q=80"
+alt="">
+
+<div class="category-overlay">
+
+<h3
+data-i18n="categories.plates">
+
+الأطباق
+
+</h3>
+
+</div>
+
+</div>
+
+<div class="category-card">
+
+<img
+src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80"
+alt="">
+
+<div class="category-overlay">
+
+<h3
+data-i18n="categories.cups">
+
+الأكواب
+
+</h3>
+
+</div>
+
+</div>
+
+<div class="category-card">
+
+<img
+src="https://images.unsplash.com/photo-1464306076886-da185f6a9d05?auto=format&fit=crop&w=900&q=80"
+alt="">
+
+<div class="category-overlay">
+
+<h3
+data-i18n="categories.decor">
+
+الديكور
+
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+PRODUCTS
+========================= -->
+
+<section
+id="products"
+class="featured-products">
+
+<div class="container">
+
+<div class="section-header">
+
+<span>
+
+BEST COLLECTION
+
+</span>
+
+<h2
+data-i18n="products.title">
+
+منتجاتنا
+
+</h2>
+
+<p
+data-i18n="products.subtitle">
+
+أفضل المنتجات
+
+</p>
+
+</div>
+
+<div class="products-grid">
+
+<!-- PRODUCT 1 -->
+
+<div class="product-card fade-up">
+
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=900&q=80"
+alt="">
+
+<div class="product-actions">
+
+<button
+class="wishlist-btn"
+
+data-id="1"
+
+data-name="طاجين مغربي"
+
+data-price="250"
+
+data-image="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=900&q=80">
+
+<i class="fas fa-heart"></i>
+
+</button>
+
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>
+
+طاجين مغربي
+
+</h3>
+
+<div class="price">
+
+250 DH
+
+</div>
+
+<button
+class="btn btn-primary"
+
+onclick="addToCart({
+id:1,
+name:'طاجين مغربي',
+price:250,
+image:'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=900&q=80'
+})">
+
+<span data-i18n="buttons.addToCart">
+
+أضف إلى السلة
+
+</span>
+
+</button>
+
+</div>
+
+</div>
+
+<!-- PRODUCT 2 -->
+
+<div class="product-card fade-up">
+
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=900&q=80"
+alt="">
+
+<div class="product-actions">
+
+<button
+class="wishlist-btn"
+
+data-id="2"
+
+data-name="طبق خزفي"
+
+data-price="180"
+
+data-image="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=900&q=80">
+
+<i class="fas fa-heart"></i>
+
+</button>
+
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>
+
+طبق خزفي
+
+</h3>
+
+<div class="price">
+
+180 DH
+
+</div>
+
+<button
+class="btn btn-primary"
+
+onclick="addToCart({
+id:2,
+name:'طبق خزفي',
+price:180,
+image:'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=900&q=80'
+})">
+
+<span data-i18n="buttons.addToCart">
+
+أضف إلى السلة
+
+</span>
+
+</button>
+
+</div>
+
+</div>
+
+<!-- PRODUCT 3 -->
+
+<div class="product-card fade-up">
+
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80"
+alt="">
+
+<div class="product-actions">
+
+<button
+class="wishlist-btn"
+
+data-id="3"
+
+data-name="كوب خزفي"
+
+data-price="90"
+
+data-image="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80">
+
+<i class="fas fa-heart"></i>
+
+</button>
+
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>
+
+كوب خزفي
+
+</h3>
+
+<div class="price">
+
+90 DH
+
+</div>
+
+<button
+class="btn btn-primary"
+
+onclick="addToCart({
+id:3,
+name:'كوب خزفي',
+price:90,
+image:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80'
+})">
+
+<span data-i18n="buttons.addToCart">
+
+أضف إلى السلة
+
+</span>
+
+</button>
+
+</div>
+
+</div>
+
+<!-- PRODUCT 4 -->
+
+<div class="product-card fade-up">
+
+<div class="product-image">
+
+<img
+src="https://images.unsplash.com/photo-1464306076886-da185f6a9d05?auto=format&fit=crop&w=900&q=80"
+alt="">
+
+<div class="product-actions">
+
+<button
+class="wishlist-btn"
+
+data-id="4"
+
+data-name="مزهرية"
+
+data-price="320"
+
+data-image="https://images.unsplash.com/photo-1464306076886-da185f6a9d05?auto=format&fit=crop&w=900&q=80">
+
+<i class="fas fa-heart"></i>
+
+</button>
+
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>
+
+مزهرية
+
+</h3>
+
+<div class="price">
+
+320 DH
+
+</div>
+
+<button
+class="btn btn-primary"
+
+onclick="addToCart({
+id:4,
+name:'مزهرية',
+price:320,
+image:'https://images.unsplash.com/photo-1464306076886-da185f6a9d05?auto=format&fit=crop&w=900&q=80'
+})">
+
+<span data-i18n="buttons.addToCart">
+
+أضف إلى السلة
+
+</span>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+ARTISANS
+========================= -->
+
+<section class="artisans-section">
+
+<div class="container">
+
+<div class="artisan-content">
+
+<h2 data-i18n="navbar.artisans">
+
+الحرفيون
+
+</h2>
+
+<p>
+
+نعتز بالتعاون مع أمهر الحرفيين المغاربة الذين يحافظون على فن الفخار التقليدي وينقلونه من جيل إلى جيل.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+NEWSLETTER
+========================= -->
+
+<section class="newsletter">
+
+<div class="container">
+
+<h2 data-i18n="footer.newsletter">
+
+النشرة البريدية
+
+</h2>
+
+<p>
+
+اشترك ليصلك جديد منتجاتنا وعروضنا.
+
+</p>
+
+<form class="newsletter-form">
+
+<input
+
+type="email"
+
+placeholder="example@email.com"
+
+data-i18n-placeholder="footer.email">
+
+<button
+type="submit"
+class="btn btn-primary"
+
+data-i18n="footer.subscribe">
+
+اشترك
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer id="contact">
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>
+
+أصالة الفخار
+
+</h3>
+
+<p>
+
+متجر متخصص في الفخار المغربي التقليدي المصنوع يدوياً.
+
+</p>
+
+</div>
+
+<div>
+
+<h4>
+
+روابط
+
+</h4>
+
+<ul>
+
+<li><a href="#home">الرئيسية</a></li>
+
+<li><a href="#about">من نحن</a></li>
+
+<li><a href="#categories">التصنيفات</a></li>
+
+<li><a href="#products">المنتجات</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>
+
+تواصل معنا
+
+</h4>
+
+<p>
+
+📞 +212 721205426
+
+</p>
+
+<p>
+
+📧 contact@example.com
+
+</p>
+
+<p>
+
+📍 المغرب
+
+</p>
+
+</div>
+
+</div>
+
+<hr class="mt-4 mb-4">
+
+<p class="text-center">
+
+<span data-i18n="footer.rights">
+
+جميع الحقوق محفوظة
+
+</span>
+
+© 2025
+
+</p>
+
+</div>
+
+</footer>
+
+<!-- =========================
+ORDER MODAL
+========================= -->
+
+<div
+id="orderModal"
+class="order-modal">
+
+<div class="order-box">
+
+<span
+class="close-modal"
+onclick="closeOrderModal()">
+
+&times;
+
+</span>
+
 <div id="orderSummary"></div>
-<input id="firstName"><input id="phone"><input id="city"><textarea id="address"></textarea>
-<button onclick="sendOrderWhatsApp()">إرسال الطلب</button>
-</div></div>
-<footer id="contact"><div class="container"><p data-i18n="footer.rights">جميع الحقوق محفوظة</p></div></footer>
+
+<div class="input-group">
+
+<label data-i18n="order.firstName">
+
+الاسم الكامل
+
+</label>
+
+<input
+id="firstName"
+type="text">
+
+</div>
+
+<div class="input-group">
+
+<label data-i18n="order.phone">
+
+رقم الهاتف
+
+</label>
+
+<input
+id="phone"
+type="tel">
+
+</div>
+
+<div class="input-group">
+
+<label data-i18n="order.city">
+
+المدينة
+
+</label>
+
+<input
+id="city"
+type="text">
+
+</div>
+
+<div class="input-group">
+
+<label data-i18n="order.address">
+
+العنوان
+
+</label>
+
+<textarea
+id="address"
+rows="4"></textarea>
+
+</div>
+
+<div class="hero-buttons mt-3">
+
+<button
+class="btn btn-primary"
+onclick="sendOrderWhatsApp()">
+
+<span data-i18n="order.send">
+
+إرسال الطلب
+
+</span>
+
+</button>
+
+<button
+class="btn btn-secondary"
+onclick="closeOrderModal()">
+
+<span data-i18n="order.cancel">
+
+إلغاء
+
+</span>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
 <script src="lang.js"></script>
+
 <script src="main.js"></script>
-</body></html>
+
+</body>
+
+</html>

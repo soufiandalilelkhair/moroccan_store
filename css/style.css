@@ -3177,3 +3177,72 @@ border-color .25s ease;
 /*==============================
 END PART 4
 ==============================*/
+.language-wrapper{
+position:relative;
+}
+
+.language-menu{
+
+position:absolute;
+
+top:60px;
+
+right:0;
+
+background:#fff;
+
+border-radius:14px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+display:none;
+
+flex-direction:column;
+
+min-width:190px;
+
+overflow:hidden;
+
+z-index:9999;
+
+}
+
+body.dark .language-menu{
+
+background:#132933;
+
+}
+
+.language-menu.show{
+
+display:flex;
+
+}
+
+.language-menu button{
+
+border:none;
+
+background:none;
+
+padding:14px 18px;
+
+cursor:pointer;
+
+text-align:right;
+
+font-size:15px;
+
+transition:.25s;
+
+color:inherit;
+
+}
+
+.language-menu button:hover{
+
+background:#c89b3c;
+
+color:#111;
+
+}
