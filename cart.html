@@ -1,223 +1,166 @@
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>سلة المشتريات | أصالة الفخار المغربي</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Cairo',sans-serif;
-}
-
-body{
-background:#f5f3ef;
-min-height:100vh;
-padding:40px 20px;
-}
-
-.cart-header{
-text-align:center;
-margin-bottom:40px;
-}
-
-.cart-header h1{
-font-size:3rem;
-color:#c89b3c;
-}
-
-.cart-header p{
-color:#666;
-margin-top:10px;
-}
-
-.cart-container{
-max-width:1200px;
-margin:auto;
-}
-
-.cart-item{
-background:white;
-border-radius:20px;
-padding:20px;
-margin-bottom:20px;
-display:flex;
-align-items:center;
-gap:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-
-.cart-item img{
-width:120px;
-height:120px;
-object-fit:cover;
-border-radius:15px;
-}
-
-.product-info{
-flex:1;
-}
-
-.product-info h3{
-font-size:1.4rem;
-margin-bottom:10px;
-}
-
-.price{
-color:#c89b3c;
-font-size:1.2rem;
-font-weight:700;
-}
-
-.quantity{
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.quantity button{
-width:40px;
-height:40px;
-border:none;
-border-radius:50%;
-background:#c89b3c;
-color:white;
-font-size:1.2rem;
-cursor:pointer;
-}
-
-.remove-btn{
-background:#dc3545;
-color:white;
-border:none;
-padding:10px 18px;
-border-radius:10px;
-cursor:pointer;
-}
-
-.cart-summary{
-background:white;
-padding:30px;
-border-radius:20px;
-margin-top:30px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-
-.total{
-font-size:2rem;
-font-weight:bold;
-text-align:center;
-margin-bottom:25px;
-}
-
-.actions{
-display:flex;
-justify-content:center;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.checkout-btn,
-.clear-btn{
-border:none;
-padding:15px 30px;
-border-radius:50px;
-font-size:1rem;
-cursor:pointer;
-}
-
-.checkout-btn{
-background:#25D366;
-color:white;
-}
-
-.clear-btn{
-background:#dc3545;
-color:white;
-}
-
-.empty{
-background:white;
-padding:80px 20px;
-text-align:center;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-
-.empty i{
-font-size:5rem;
-color:#c89b3c;
-margin-bottom:20px;
-}
-
-@media(max-width:768px){
-
-.cart-item{
-flex-direction:column;
-text-align:center;
-}
-
-.product-info{
-width:100%;
-}
-
-}
-
-</style>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="cart-header">
+<div class="cart-page">
 
-<h1>
-🛒 سلة المشتريات
-</h1>
+    <div class="cart-header">
 
-<p>
-جميع المنتجات التي أضفتها تظهر هنا
-</p>
+        <h1>🛒 سلة المشتريات</h1>
+
+        <p>راجع منتجاتك ثم اضغط على إتمام الطلب.</p>
+
+    </div>
+
+    <div id="cartContainer">
+
+    </div>
 
 </div>
 
-<div class="cart-container" id="cartContainer">
+<!-- نافذة معلومات العميل -->
+<div id="orderModal" class="order-modal">
+
+    <div class="order-box">
+
+        <span class="close-modal"
+        onclick="closeOrderModal()">
+
+            &times;
+
+        </span>
+
+        <h2>
+
+            معلومات العميل
+
+        </h2>
+
+        <p class="order-subtitle">
+
+            المرجو إدخال معلومات التوصيل
+
+        </p>
+
+        <div class="input-group">
+
+            <label>
+
+                الاسم الكامل *
+
+            </label>
+
+            <input
+            id="firstName"
+            type="text"
+            placeholder="أدخل اسمك الكامل">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>
+
+                رقم الهاتف *
+
+            </label>
+
+            <input
+            id="phone"
+            type="tel"
+            placeholder="06xxxxxxxx">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>
+
+                المدينة *
+
+            </label>
+
+            <input
+            id="city"
+            type="text"
+            placeholder="أدخل المدينة">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>
+
+                العنوان الكامل *
+
+            </label>
+
+            <textarea
+            id="address"
+            placeholder="الحي - الشارع - رقم المنزل ...">
+            </textarea>
+
+        </div>
+
+        <div id="orderSummary">
+
+        </div>
+
+        <button
+        class="confirm-order-btn"
+        onclick="sendOrderWhatsApp()">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            تأكيد الطلب عبر واتساب
+
+        </button>
+
+    </div>
+
 </div>
 
-<script src="js/main.js"></script>
+<script src="main.js"></script>
 
 <script>
+
+renderCart();
 
 function renderCart(){
 
 const container =
-document.getElementById(
-"cartContainer"
-);
+document.getElementById("cartContainer");
 
-let cart =
-JSON.parse(
-localStorage.getItem("cart")
-) || [];
+const cart =
+JSON.parse(localStorage.getItem("cart")) || [];
 
-if(cart.length === 0){
+if(cart.length===0){
 
-container.innerHTML = `
+container.innerHTML=`
 
-<div class="empty">
+<div class="empty-cart">
 
 <i class="fa-solid fa-cart-shopping"></i>
 
 <h2>
+
 السلة فارغة
+
 </h2>
 
 </div>
@@ -228,63 +171,49 @@ return;
 
 }
 
-let total = 0;
+let total=0;
 
-container.innerHTML = "";
+let html="";
 
 cart.forEach(item=>{
 
-total +=
-(item.price || 0)
-*
-(item.quantity || 1);
+total+=item.price*item.quantity;
 
-container.innerHTML += `
+html+=`
 
 <div class="cart-item">
 
+<div class="cart-image">
+
 <img src="${item.image}">
 
-<div class="product-info">
+</div>
+
+<div class="cart-info">
 
 <h3>${item.name}</h3>
 
 <div class="price">
+
 ${item.price} درهم
-</div>
 
 </div>
 
-<div class="quantity">
+</div>
 
-<button
-onclick="
-increaseQuantity(${item.id});
-setTimeout(renderCart,100);
-">
-+
-</button>
+<div class="cart-qty">
 
-<span>
-${item.quantity}
-</span>
+<button onclick="increaseQuantity(${item.id});setTimeout(renderCart,100)">+</button>
 
-<button
-onclick="
-decreaseQuantity(${item.id});
-setTimeout(renderCart,100);
-">
--
-</button>
+<span>${item.quantity}</span>
+
+<button onclick="decreaseQuantity(${item.id});setTimeout(renderCart,100)">-</button>
 
 </div>
 
-<button
-class="remove-btn"
-onclick="
-removeCartItem(${item.id});
-setTimeout(renderCart,100);
-">
+<button class="remove-btn"
+
+onclick="removeCartItem(${item.id});setTimeout(renderCart,100)">
 
 حذف
 
@@ -295,36 +224,44 @@ setTimeout(renderCart,100);
 `;
 
 });
-
-container.innerHTML += `
+container.innerHTML = html + `
 
 <div class="cart-summary">
 
-<div class="total">
+    <div class="total">
 
-المجموع :
-${total} درهم
+        المجموع :
 
-</div>
+        ${total} درهم
 
+    </div>
 
+    <div class="actions">
 
-<div class="actions">
+        <button
+        class="checkout-btn"
+        onclick="openOrderModal()">
 
-   <button class="checkout-btn" onclick="openOrderModal()">
-    إتمام الطلب
-</button>
+            <i class="fa-solid fa-circle-check"></i>
 
-    <button class="clear-btn"
+            إتمام الطلب
+
+        </button>
+
+        <button
+        class="clear-btn"
         onclick="
         clearCart();
         renderCart();
         ">
-        تفريغ السلة
-    </button>
 
-</div>
+            <i class="fa-solid fa-trash"></i>
 
+            تفريغ السلة
+
+        </button>
+
+    </div>
 
 </div>
 
@@ -332,98 +269,8 @@ ${total} درهم
 
 }
 
-function checkout(){
-
-let cart =
-JSON.parse(
-localStorage.getItem("cart")
-) || [];
-
-let text =
-"طلب جديد:%0A%0A";
-
-cart.forEach(item=>{
-
-text +=
-item.name +
-" × " +
-item.quantity +
-"%0A";
-
-});
-
-window.open(
-
-"https://wa.me/+212721205426?text="
-+
-text,
-
-"_blank"
-
-);
-
-}
-
-renderCart();
-
 </script>
 
-</div>
-
-    </div>
-
-</div>
-
-</div>
-<div id="orderModal" class="order-modal">
-
-    <div class="order-box">
-        <span
-class="close-modal"
-onclick="closeOrderModal()">
-
-×
-
-</span>
-<h2>معلومات العميل</h2>
-
-<p class="order-subtitle">
-    المرجو إدخال معلومات التوصيل
-</p>
-
-<div class="input-group">
-    <label>الاسم الكامل *</label>
-    <input type="text" id="firstName" placeholder="أدخل اسمك الكامل">
-</div>
-
-<div class="input-group">
-    <label>رقم الهاتف *</label>
-    <input type="tel" id="phone" placeholder="أدخل رقم هاتفك">
-</div>
-
-<div class="input-group">
-    <label>المدينة *</label>
-    <input type="text" id="city" placeholder="أدخل اسم المدينة">
-</div>
-
-<div class="input-group">
-    <label>العنوان الكامل *</label>
-    <textarea id="address"
-    placeholder="أدخل عنوانك بالتفصيل"></textarea>
-</div>
-
-<div id="orderSummary"></div>
-
-<button
-class="confirm-order-btn"
-onclick="sendOrderWhatsApp()">
-
-تأكيد الطلب عبر واتساب
-</button>
-    </div>
-
-</div>
 </body>
 
 </html>
-
