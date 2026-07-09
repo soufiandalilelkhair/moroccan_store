@@ -636,9 +636,9 @@ function openOrderModal(){
 
     const modal = document.getElementById("orderModal");
 
-    modal.style.display = "flex";
-
     modal.classList.add("show");
+
+    modal.style.display = "flex";
 
     document.body.style.overflow = "hidden";
 
@@ -655,6 +655,7 @@ function closeOrderModal(){
     document.body.style.overflow = "auto";
 
 }
+
 
 /* إغلاق عند الضغط خارج النافذة */
 
